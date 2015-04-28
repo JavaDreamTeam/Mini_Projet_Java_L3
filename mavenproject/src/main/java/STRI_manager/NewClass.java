@@ -10,5 +10,6 @@ package STRI_manager;
  * @author Boubacar
  */
 public class NewClass {
+    test
     
 }
