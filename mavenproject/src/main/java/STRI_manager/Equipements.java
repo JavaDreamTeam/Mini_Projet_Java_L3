@@ -12,14 +12,14 @@ public class Equipements {
 	private Integer idEq;
 	private String nomEq= new String();;
 	private String typeEq= new String();
-	private Integer idSal;
+	private String nomSalle;
 	private ArrayList<InterfaceOrdi> listInter= new ArrayList<InterfaceOrdi>();
 	/**
 	 * 
 	 */
 	public Equipements(Integer idEq, String nomEq, String typeEq, Integer idSal) {
 		this.idEq=idEq;
-		this.idSal=idSal;
+		this.nomSalle=nomSalle;
 		this.typeEq=typeEq;
 		this.nomEq=nomEq;
 	}
@@ -44,9 +44,6 @@ public class Equipements {
 	/**
 	 * @return the idSal
 	 */
-	public Integer getIdSal() {
-		return idSal;
-	}
 	/**
 	 * @param idEq the idEq to set
 	 */
@@ -65,16 +62,31 @@ public class Equipements {
 	public void setTypeEq(String typeEq) {
 		this.typeEq = typeEq;
 	}
+
+    public String getNomSalle() {
+        return nomSalle;
+    }
+
+    public ArrayList<InterfaceOrdi> getListInter() {
+        return listInter;
+    }
+
+    public void setNomSalle(String nomSalle) {
+        this.nomSalle = nomSalle;
+    }
+
+    public void setListInter(ArrayList<InterfaceOrdi> listInter) {
+        this.listInter = listInter;
+    }
 	/**
 	 * @param idSal the idSal to set
 	 */
-	public void setIdSal(Integer idSal) {
-		this.idSal = idSal;
-	}
+	
 	public void voirDetailsEq(Equipements E){
 		System.out.println("Details de l'equipement "+E.getNomEq()+" : /n");
 		System.out.println("Identifiant"+E.getIdEq()+"/n");
 		System.out.println("Type d'equipement " +E.getTypeEq()+"/n");
+                System.out.println("Salle " +E.getNomSalle()+"/n");
 	}
 	
 	public void voirListInter(){ //pour voir l'ensemble des interfaces de l'equipement
