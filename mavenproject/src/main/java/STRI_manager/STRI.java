@@ -31,67 +31,64 @@ public class STRI extends javax.swing.JFrame {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         labelAccueil = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        ajoutSalle = new javax.swing.JButton();
+        ajoutEq = new javax.swing.JButton();
+        affecterEq = new javax.swing.JButton();
+        desactiverEq = new javax.swing.JButton();
+        majOS = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 190, 73));
         setForeground(new java.awt.Color(0, 0, 0));
 
-        labelAccueil.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         labelAccueil.setForeground(new java.awt.Color(0, 0, 255));
-        labelAccueil.setIcon(new javax.swing.ImageIcon("C:\\Users\\AlphaOumar\\Desktop\\logo.png")); // NOI18N
+        labelAccueil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.jpg"))); // NOI18N
         labelAccueil.setText("BIENVENUE SUR LE SERVICE DE GESTION D'EQUIPEMENTS STRICOM  ");
         labelAccueil.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 255), java.awt.Color.black));
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, labelAccueil, org.jdesktop.beansbinding.ELProperty.create("${font}"), labelAccueil, org.jdesktop.beansbinding.BeanProperty.create("font"));
         bindingGroup.addBinding(binding);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 63, 197));
-        jButton1.setText("Ajouter Une Salle");
-        jButton1.setToolTipText("");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ajoutSalle.setBackground(new java.awt.Color(255, 255, 255));
+        ajoutSalle.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        ajoutSalle.setForeground(new java.awt.Color(0, 63, 197));
+        ajoutSalle.setText("Ajouter Une Salle");
+        ajoutSalle.setToolTipText("");
+        ajoutSalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ajoutSalleActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 63, 197));
-        jButton2.setText("Ajouter Un Equipement");
-        jButton2.setToolTipText("");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ajoutEq.setBackground(new java.awt.Color(255, 255, 255));
+        ajoutEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        ajoutEq.setForeground(new java.awt.Color(0, 63, 197));
+        ajoutEq.setText("Ajouter Un Equipement");
+        ajoutEq.setToolTipText("");
+        ajoutEq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ajoutEqActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 63, 197));
-        jButton3.setText("Affecter Un Equipement");
-        jButton3.setToolTipText("");
+        affecterEq.setBackground(new java.awt.Color(255, 255, 255));
+        affecterEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        affecterEq.setForeground(new java.awt.Color(0, 63, 197));
+        affecterEq.setText("Affecter Un Equipement");
+        affecterEq.setToolTipText("");
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 63, 197));
-        jButton4.setText("Désactiver Un Equipement");
-        jButton4.setToolTipText("");
+        desactiverEq.setBackground(new java.awt.Color(255, 255, 255));
+        desactiverEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        desactiverEq.setForeground(new java.awt.Color(0, 63, 197));
+        desactiverEq.setText("Désactiver Un Equipement");
+        desactiverEq.setToolTipText("");
 
-        jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 63, 197));
-        jButton5.setText("Mettre à Jour Un OS");
-        jButton5.setToolTipText("");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\AlphaOumar\\Desktop\\Ordi_Reseau.jpg")); // NOI18N
+        majOS.setBackground(new java.awt.Color(255, 255, 255));
+        majOS.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        majOS.setForeground(new java.awt.Color(0, 63, 197));
+        majOS.setText("Mettre à Jour Un OS");
+        majOS.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,37 +97,35 @@ public class STRI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ajoutSalle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(desactiverEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(affecterEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ajoutEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(majOS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(106, 106, 106))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(labelAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(labelAccueil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(labelAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(ajoutSalle)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(ajoutEq)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(affecterEq)
                         .addGap(23, 23, 23)
-                        .addComponent(jButton4)
+                        .addComponent(desactiverEq)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5)
+                        .addComponent(majOS)
                         .addContainerGap())))
         );
 
@@ -139,20 +134,20 @@ public class STRI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ajoutSalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutSalleActionPerformed
         /* On ouvre Une nouvelle fenêtre avec le clic*/
         ajoutSalle ajoutEq= new ajoutSalle();
         ajoutEq.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ajoutSalleActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ajoutEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutEqActionPerformed
         /*Nouvelle fenêtre pour ajout d'un équipement*/
         ajoutEquipement ajoutEq= new ajoutEquipement();
         ajoutEq.setVisible(true);
         this.setVisible(false);
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ajoutEqActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,13 +185,13 @@ public class STRI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton affecterEq;
+    private javax.swing.JButton ajoutEq;
+    private javax.swing.JButton ajoutSalle;
+    private javax.swing.JButton desactiverEq;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelAccueil;
+    private javax.swing.JButton majOS;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
      

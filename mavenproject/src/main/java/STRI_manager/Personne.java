@@ -16,6 +16,6 @@ public class Personne {
     
     public Personne(){
         nom="boubacar";
-       age=24;
+        age=24;
     }        
 }
