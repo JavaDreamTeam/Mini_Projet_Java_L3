@@ -115,4 +115,31 @@ public class Equipements {
 	
 		
 	   }
+        
+        /**
+         * 
+         * @return le niveau de l'equipement 
+         */
+        public int getNiveau(){
+            int min;
+            min=Integer.MAX_VALUE;
+            if(listInter.isEmpty())
+            {                    
+                return 0;
+            }
+             else {
+                
+                for(InterfaceOrdi inter: listInter )
+                {
+                    if((inter.getActive()==true)&&(inter.getNiveau()!=0))
+                            {
+                                if(inter.getNiveau()<min)
+                                {
+                                    min=inter.getNiveau();
+                                }
+                            }
+                }     
+                return min;
+            }
+        }
 }

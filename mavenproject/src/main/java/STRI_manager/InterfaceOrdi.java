@@ -144,6 +144,11 @@ public class InterfaceOrdi {
 			System.out.println("Desactivee");
 		}
 	}
+        
+        
+        public void connecter(InterfaceOrdi it){
+            
+        }
    }
 
    
