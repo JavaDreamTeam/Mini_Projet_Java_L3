@@ -137,13 +137,16 @@ public class STRI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         /* On ouvre Une nouvelle fenêtre avec le clic*/
-        ajoutEquipement ajoutEq= new ajoutEquipement();
+        ajoutSalle ajoutEq= new ajoutSalle();
         ajoutEq.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        /*Nouvelle fenêtre pour ajout d'un équipement*/
+        ajoutEquipement ajoutEq= new ajoutEquipement();
+        ajoutEq.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
