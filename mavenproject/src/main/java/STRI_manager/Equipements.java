@@ -71,7 +71,7 @@ public class Equipements {
 	public void setIdSal(Integer idSal) {
 		this.idSal = idSal;
 	}
-	public void voirDetailsEq(Equipement E){
+	public void voirDetailsEq(Equipements E){
 		System.out.println("Details de l'equipement "+E.getNomEq()+" : /n");
 		System.out.println("Identifiant"+E.getIdEq()+"/n");
 		System.out.println("Type d'equipement " +E.getTypeEq()+"/n");
