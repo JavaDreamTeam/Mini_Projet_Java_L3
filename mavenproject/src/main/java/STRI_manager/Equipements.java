@@ -19,10 +19,10 @@ public class Equipements {
 	private String typeEq= new String();
 	private Integer idSal;
 	private ArrayList<InterfaceOrdi> listInter= new ArrayList<InterfaceOrdi>();
-	/**
-	 * 
-	 */
-	public Equipement(Integer idEq, String nomEq, String typeEq, Integer idSal) {
+	
+        
+        
+	public Equipements(Integer idEq, String nomEq, String typeEq, Integer idSal) {
 		this.idEq=idEq;
 		this.idSal=idSal;
 		this.typeEq=typeEq;

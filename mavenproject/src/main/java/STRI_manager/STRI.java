@@ -42,9 +42,7 @@ public class STRI extends javax.swing.JFrame {
         setBackground(new java.awt.Color(240, 190, 73));
         setForeground(new java.awt.Color(0, 0, 0));
 
-        labelAccueil.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         labelAccueil.setForeground(new java.awt.Color(0, 0, 255));
-        labelAccueil.setIcon(new javax.swing.ImageIcon("C:\\Users\\AlphaOumar\\Desktop\\logo.png")); // NOI18N
         labelAccueil.setText("BIENVENUE SUR LE SERVICE DE GESTION D'EQUIPEMENTS STRICOM  ");
         labelAccueil.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 255), java.awt.Color.black));
 
@@ -91,8 +89,6 @@ public class STRI extends javax.swing.JFrame {
         jButton5.setText("Mettre à Jour Un OS");
         jButton5.setToolTipText("");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\AlphaOumar\\Desktop\\Ordi_Reseau.jpg")); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,7 +112,7 @@ public class STRI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(labelAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
