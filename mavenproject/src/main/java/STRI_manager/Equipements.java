@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package STRI_manager;
 import java.util.*;
 /**
@@ -22,7 +17,7 @@ public class Equipements {
 	/**
 	 * 
 	 */
-	public Equipement(Integer idEq, String nomEq, String typeEq, Integer idSal) {
+	public Equipements(Integer idEq, String nomEq, String typeEq, Integer idSal) {
 		this.idEq=idEq;
 		this.idSal=idSal;
 		this.typeEq=typeEq;
@@ -76,14 +71,48 @@ public class Equipements {
 	public void setIdSal(Integer idSal) {
 		this.idSal = idSal;
 	}
-	public void supprimerInterface(InterfaceOrdi I){
-		listInter.remove(I);
+	public void voirDetailsEq(Equipement E){
+		System.out.println("Details de l'equipement "+E.getNomEq()+" : /n");
+		System.out.println("Identifiant"+E.getIdEq()+"/n");
+		System.out.println("Type d'equipement " +E.getTypeEq()+"/n");
+	}
+	
+	public void voirListInter(){ //pour voir l'ensemble des interfaces de l'equipement
+		Iterator<InterfaceOrdi> itr = listInter.listIterator();//utilisation de ListIterator pour parcourir la liste des interfaces de l'equipements
+		while (itr.hasNext()){
+		System.out.println(itr.hasNext()+"/n");
+		}
+	}
+	public void supprimerInterface(Integer Id){
+		 Iterator<InterfaceOrdi> itr = listInter.listIterator();//utilisation de ListIterator pour parcourir la liste des interfaces de l'equipements
+		 while (itr.hasNext()){
+			 if (itr.next().getIdInter()==Id){
+				 listInter.remove(itr.next());
+				 }
+			 else {
+				 System.out.println("L'objet que vous voulez supprimer n'exite pas");
+			 }
+		 }
+		
 	   }
 	public void ajouterInterface(InterfaceOrdi I){
 		listInter.add(I);
 	   }
-	public void desactiverInterface(Integer idInter){
-		   
+	public void desactiverInterface(Integer Id){
+        Iterator<InterfaceOrdi> itr = listInter.listIterator();//utilisation de ListIterator pour parcourir la liste des interfaces de l'equipements
+		while (itr.hasNext()){
+			 if (itr.next().getIdInter()==Id){
+				 if (itr.next().getActive()==true){
+					 itr.next().setActive(false);
+				 }
+				 else {
+					 System.out.println("L'interface est deja desactivee"); 
+				 } }
+			else {
+				 System.out.println("L'interface que vous voulez desactiver n'exite pas");
+			}
+				 }
+	
+		
 	   }
 }
-
