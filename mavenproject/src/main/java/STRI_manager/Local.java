@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package parc;
+import STRI_manager.InterfaceOrdi;
 import java.util.*;
 
 
@@ -85,7 +86,15 @@ public class Local{
 	 */
 	public void supprimerSalle(int idSalle){
              
-                
+           Iterator<Salle> itr = salles.listIterator();//utilisation de ListIterator pour parcourir la liste des interfaces de l'equipements
+		 while (itr.hasNext()){
+			 if (itr.next().getIdSalle()==idSalle){
+				 salles.remove(itr.next());
+				 }
+			 else {
+				 System.out.println("L'objet que vous voulez supprimer n'exite pas");
+			 }
+		 }     
 		//salles.remove(idSalle);
 	}
 	

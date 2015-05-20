@@ -1,7 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * 
  */
 package STRI_manager;
 
@@ -11,6 +9,7 @@ package STRI_manager;
  */
 public class InterfaceOrdi {
 	private Integer idInter;
+	private String NomInter= new String();
 	private Integer numPort;
 	private String addrMAC= new String();
 	private Boolean active; //pour tester si l'inetrface est up ou down
@@ -34,6 +33,18 @@ public class InterfaceOrdi {
 	 */
 	public Integer getIdInter() {
 		return idInter;
+	}
+	/**
+	 * @param nomInter the nomInter to set
+	 */
+	public void setNomInter(String nomInter) {
+		NomInter = nomInter;
+	}
+	/**
+	 * @return the nomInter
+	 */
+	public String getNomInter() {
+		return NomInter;
 	}
 	/**
 	 * @param idInter the idInter to set
@@ -113,7 +124,31 @@ public class InterfaceOrdi {
 	public void setNiveau(Integer niveau) {
 		this.niveau = niveau;
 	}
-   
+	public void voirDetailsInterfaces(InterfaceOrdi I){
+		System.out.println("Details de l'interface "+I.getNomInter()+" : /n");
+		System.out.println("Adresse MAC : "+I.getAddrMAC()+"/n");
+		System.out.println("Identifiant"+I.getIdEq()+"/n");
+		System.out.println("Numero de port " +I.getNumPort()+"/n");
+		System.out.println("Statut : "+I.getActive());
+		System.out.println("Appartient a l'equipement "+I.getIdEq()+"/n");
+	}
+	public void voirConnectivite(InterfaceOrdi I){ //pour savoir si l'interface est connecte ou non a une autre
+			
+	}
+	public void voirStatut(InterfaceOrdi I){
+		active=I.getActive();
+		if (active==true){
+			System.out.println("Activee");
+		}
+		else{
+			System.out.println("Desactivee");
+		}
+	}
+        
+        
+        public void connecter(InterfaceOrdi it){
+            
+        }
    }
 
-
+   
