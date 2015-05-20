@@ -81,5 +81,13 @@ public class Salle {
                     on trouve l'equipement à supprimer 
                 */
 	}
+
+    int getIdLocal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    int getIdLocal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 	
 }
