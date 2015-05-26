@@ -1,4 +1,4 @@
-package test;
+package STRI_manager;
 import java.net.*;
 import java.awt.BorderLayout;
 import java.sql.Connection;
@@ -66,19 +66,18 @@ public class AjoutEquip extends JFrame implements ActionListener
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-		if (e.getSource()==aj)
-		{
+		
 			try
             {
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entreprise","root","lucie");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/gestionnaire","root","");
 
             }
             catch(Exception ex)
             {
                 System.out.println("OUPS!!!! Erreur de connexion"+ex.getMessage());
             }
-            Equipements E; 
+            Equipements_1 E; 
             try
 			 {
 		        	//Recuperer les valeurs des differents champs de saisie  
@@ -87,7 +86,7 @@ public class AjoutEquip extends JFrame implements ActionListener
 		    		String interfaceEq=chinterface.getText();
 		    		String salle=chsalle.getText();
 		    		String bat=chbat.getText();
-		    	    E = new Equipements();
+		    	    E = new Equipements_1();
 		    	  //Ajout des Attributs de l'objet equipement a ajouter
 		    		E.setNomEq(nom);
 		    		E.setTypeEq(typEq);
@@ -101,7 +100,7 @@ public class AjoutEquip extends JFrame implements ActionListener
 		    		chsalle.setText("");
 		    		chbat.setText("");
 		    		
-		    		st= con.prepareStatement("update Equipements set statut=(nom,type,interface,salle) values(?,?,?,?)");
+		    		st= con.prepareStatement("insert into equipements (nomEq,interface,type,nomSalle) values(?,?,?,?)");
 
 		             st.setString(1,E.getNomEq());
 		             st.setString(2,E.getTypeEq());
@@ -115,20 +114,8 @@ public class AjoutEquip extends JFrame implements ActionListener
 			 }
 		}
 		
-			else
-				if (e.getSource()==qt)
-				{
-					try
-					{
-					 new Gestionnaire();
-				    }
-					catch(Exception ex)
-					{
-						System.out.println(ex.getMessage());
-					}
-				}	
 		
-	}
+	
 	public static void main(String args[])
 	{
 		new AjoutEquip();

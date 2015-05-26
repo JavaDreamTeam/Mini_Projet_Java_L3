@@ -5,6 +5,10 @@
  */
 package STRI_manager;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.*;
+
 /**
  *
  * @author AlphaOumar
@@ -30,13 +34,13 @@ public class ajoutEquipement extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        typeEq = new javax.swing.JTextField();
+        interEq = new javax.swing.JTextField();
         bouttonValider = new javax.swing.JButton();
         nomEq = new javax.swing.JTextField();
-        idEq = new javax.swing.JTextField();
+        type = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        idSalle = new javax.swing.JTextField();
+        nomSalle = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 255, 153));
@@ -56,11 +60,11 @@ public class ajoutEquipement extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel3.setText("IDENTIFIANT SALLE");
+        jLabel3.setText("NOM SALLE");
 
-        typeEq.addActionListener(new java.awt.event.ActionListener() {
+        interEq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                typeEqActionPerformed(evt);
+                interEqActionPerformed(evt);
             }
         });
 
@@ -80,19 +84,19 @@ public class ajoutEquipement extends javax.swing.JFrame {
             }
         });
 
-        idEq.addActionListener(new java.awt.event.ActionListener() {
+        type.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idEqActionPerformed(evt);
+                typeActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel5.setText("TYPE");
+        jLabel5.setText("INTERFACE");
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel4.setText("IDENIFIANT EQUIPEMENT");
+        jLabel4.setText("TYPE");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,10 +120,10 @@ public class ajoutEquipement extends javax.swing.JFrame {
                         .addComponent(jLabel3)))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(idEq, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                    .addComponent(type, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                     .addComponent(nomEq)
-                    .addComponent(typeEq)
-                    .addComponent(idSalle))
+                    .addComponent(interEq)
+                    .addComponent(nomSalle))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -132,15 +136,15 @@ public class ajoutEquipement extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(typeEq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(interEq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idEq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(bouttonValider)
@@ -150,20 +154,54 @@ public class ajoutEquipement extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void typeEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeEqActionPerformed
+    private void interEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_interEqActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_typeEqActionPerformed
+    }//GEN-LAST:event_interEqActionPerformed
 
     private void nomEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomEqActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomEqActionPerformed
 
-    private void idEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idEqActionPerformed
+    private void typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idEqActionPerformed
+    }//GEN-LAST:event_typeActionPerformed
 
     private void bouttonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouttonValiderActionPerformed
+        Equipements_1 E; 
+        Connection con=null;
+	PreparedStatement st=null;
+    ResultSet rs=null;
+            try
+			 {
+		        	//Recuperer les valeurs des differents champs de saisie  
+		    		String nom=nomEq.getText();
+		    		String inter =interEq.getText();
+		    		String salle=nomSalle.getText();
+		    		String typEq=type.getText();
+		    	    E = new Equipements_1();
+		    	  //Ajout des Attributs de l'objet equipement a ajouter
+		    		E.setNomEq(nom);
+                                E.setInterfaceEq(inter);
+		    		E.setTypeEq(typEq);
+		    		E.setSalle(salle);
+		    	 //Vider chaque champ de texte pour une quelconque nouvel ajout
+		    		nomEq.setText("");
+		    		type.setText("");
+		    		nomSalle.setText("");
+		    		interEq.setText("");
+		    	 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
+		    		st= con.prepareStatement("insert into equipements(nomEq,type,interface,nomSalle) values(?,?,?,?)");
 
+		             st.setString(1,E.getNomEq());
+		             st.setString(2,E.getTypeEq());
+		             st.setString(3,E.getInterfaceEq());
+		             st.setString(4,E.getNomSal());
+		             st.executeUpdate();
+		    }
+			 catch(Exception ex)
+			 {
+				 System.out.println(ex.getMessage());
+			 }        
         // TODO add your handling code here:
     }//GEN-LAST:event_bouttonValiderActionPerformed
 
@@ -204,14 +242,14 @@ public class ajoutEquipement extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bouttonValider;
-    private javax.swing.JTextField idEq;
-    private javax.swing.JTextField idSalle;
+    private javax.swing.JTextField interEq;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField nomEq;
-    private javax.swing.JTextField typeEq;
+    private javax.swing.JTextField nomSalle;
+    private javax.swing.JTextField type;
     // End of variables declaration//GEN-END:variables
 }

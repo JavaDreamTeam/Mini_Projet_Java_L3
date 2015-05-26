@@ -1,7 +1,7 @@
-package test;
+package STRI_manager;
 import java.util.*;
 
-public class Equipements {
+public class Equipements_1 {
 
 	private String nomEq= new String();;
 	private String typeEq= new String();

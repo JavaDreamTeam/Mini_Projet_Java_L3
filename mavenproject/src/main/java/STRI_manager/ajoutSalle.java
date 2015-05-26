@@ -52,7 +52,7 @@ public class ajoutSalle extends javax.swing.JFrame {
         jLabel4.setText("BATIMENT");
 
         valider.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        valider.setForeground(new java.awt.Color(0, 255, 0));
+        valider.setForeground(new java.awt.Color(0, 0, 255));
         valider.setText("Valider");
         valider.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         valider.addActionListener(new java.awt.event.ActionListener() {
