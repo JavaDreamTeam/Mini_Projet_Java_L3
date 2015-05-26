@@ -10,7 +10,6 @@ import java.util.ArrayList;
  *
  */
 public class Salles {
-	private  Integer idSalle;
 	private String nom = new String();
 	private String batiment = new String();
 	private ArrayList<Equipements> ListEq;
@@ -19,18 +18,12 @@ public class Salles {
 	 */
 	public Salles(Integer idSalle, String nom, String batiment) {
 		super();
-		this.idSalle = idSalle;
 		this.nom = nom;
 		this.batiment = batiment;
 		ListEq=new ArrayList<Equipements>();
 		// TODO Auto-generated constructor stub
 	}
-	/**
-	 * @param idSalle the idSalle to set
-	 */
-	public void setIdSalle(Integer idSalle) {
-		this.idSalle = idSalle;
-	}
+	
 	/**
 	 * @param nom the nom to set
 	 */
@@ -49,12 +42,7 @@ public class Salles {
 	public void setListEq(ArrayList<Equipements> listEq) {
 		ListEq = listEq;
 	}
-	/**
-	 * @return the idSalle
-	 */
-	public Integer getIdSalle() {
-		return idSalle;
-	}
+	
 	/**
 	 * @return the nom
 	 */

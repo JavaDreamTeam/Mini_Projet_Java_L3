@@ -35,7 +35,7 @@ public class STRI extends javax.swing.JFrame {
         ajoutEq = new javax.swing.JButton();
         affecterEq = new javax.swing.JButton();
         desactiverEq = new javax.swing.JButton();
-        majOS = new javax.swing.JButton();
+        supEq = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,7 +75,7 @@ public class STRI extends javax.swing.JFrame {
         affecterEq.setBackground(new java.awt.Color(255, 255, 255));
         affecterEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         affecterEq.setForeground(new java.awt.Color(0, 63, 197));
-        affecterEq.setText("Affecter Un Equipement");
+        affecterEq.setText("Details Equipement");
         affecterEq.setToolTipText("");
 
         desactiverEq.setBackground(new java.awt.Color(255, 255, 255));
@@ -84,11 +84,16 @@ public class STRI extends javax.swing.JFrame {
         desactiverEq.setText("Désactiver Un Equipement");
         desactiverEq.setToolTipText("");
 
-        majOS.setBackground(new java.awt.Color(255, 255, 255));
-        majOS.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        majOS.setForeground(new java.awt.Color(0, 63, 197));
-        majOS.setText("Mettre à Jour Un OS");
-        majOS.setToolTipText("");
+        supEq.setBackground(new java.awt.Color(255, 255, 255));
+        supEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        supEq.setForeground(new java.awt.Color(0, 63, 197));
+        supEq.setText("Supprimer Equipement");
+        supEq.setToolTipText("");
+        supEq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supEqActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,7 +106,7 @@ public class STRI extends javax.swing.JFrame {
                     .addComponent(desactiverEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(affecterEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ajoutEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(majOS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(supEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(106, 106, 106))
@@ -125,7 +130,7 @@ public class STRI extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(desactiverEq)
                         .addGap(18, 18, 18)
-                        .addComponent(majOS)
+                        .addComponent(supEq)
                         .addContainerGap())))
         );
 
@@ -148,6 +153,13 @@ public class STRI extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_ajoutEqActionPerformed
+
+    private void supEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supEqActionPerformed
+        // TODO add your handling code here:
+       SupprimerEq supEq = new SupprimerEq();
+        supEq.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_supEqActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,7 +203,7 @@ public class STRI extends javax.swing.JFrame {
     private javax.swing.JButton desactiverEq;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelAccueil;
-    private javax.swing.JButton majOS;
+    private javax.swing.JButton supEq;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
      

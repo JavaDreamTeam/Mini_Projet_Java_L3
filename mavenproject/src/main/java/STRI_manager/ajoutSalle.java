@@ -5,6 +5,12 @@
  */
 package STRI_manager;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.*;
+
 /**
  *
  * @author AlphaOumar
@@ -31,11 +37,9 @@ public class ajoutSalle extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        idSalle = new javax.swing.JTextField();
         batiment = new javax.swing.JTextField();
         valider = new javax.swing.JButton();
         nomSalle = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,10 +71,6 @@ public class ajoutSalle extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
-        jLabel2.setText("IDENTIFIANT SALLE");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,12 +86,10 @@ public class ajoutSalle extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel2)
                             .addComponent(jLabel3))
-                        .addGap(60, 60, 60)
+                        .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(batiment, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
-                            .addComponent(idSalle, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
                             .addComponent(nomSalle))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -99,11 +97,7 @@ public class ajoutSalle extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(8, 8, 8)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(nomSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -125,6 +119,34 @@ public class ajoutSalle extends javax.swing.JFrame {
 
     private void validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validerActionPerformed
         // TODO add your handling code here:
+        Salles S; 
+        Connection con=null;
+	PreparedStatement st=null;
+    ResultSet rs=null;
+            try
+			 {
+		        	//Recuperer les valeurs des differents champs de saisie  
+		    		String nom=nomSalle.getText();
+		    		String bat =batiment.getText();
+		    	    Salles S = new Salles();
+		    	  //Ajout des Attributs de l'objet equipement a ajouter
+		    		S.setNom(nom);
+                                S.setBatiment(bat);
+		    	 //Vider chaque champ de texte pour une quelconque nouvel ajout
+		    		nomSalle.setText("");
+		    		batiment.setText("");
+		    	 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
+		    		st= con.prepareStatement("insert into Salles(nomSalle,batiment) values(?,?)");
+
+		             st.setString(1,S.getNom());
+		             st.setString(2,S.getBatiment());
+		             st.executeUpdate();
+		    }
+			 catch(Exception ex)
+			 {
+				 System.out.println(ex.getMessage());
+			 }  
+        
     }//GEN-LAST:event_validerActionPerformed
 
     /**
@@ -164,9 +186,7 @@ public class ajoutSalle extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField batiment;
-    private javax.swing.JTextField idSalle;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nomSalle;
