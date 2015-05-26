@@ -21,21 +21,28 @@ import java.sql.* ;
           // Protocole de connexion
          String protocole =  "jdbc:mysql:" ;
           // Adresse IP de l’hôte de la base et port
-         String ip =  "mysql.hostinger.fr" ;  // dépend du contexte
+         //String ip =  "mysql.hostinger.fr" ;  // dépend du contexte
+         String ip =  "127.0.0.1" ;  // dépend du contexte
          String port =  "3306" ;  // port MySQL par défaut
           // Nom de la base ;
-         String nomBase =  "u363596812_java" ;  // dépend du contexte
+         //String nomBase =  "u363596812_java" ;  // dépend du contexte
+
+         String nomBase =  "gestionnaire" ;  // dépend du contexte
           // Chaîne de connexion
          String conString = protocole +  "//" + ip +  ":" + port +  "/" + nomBase ;
           // Identifiants de connexion et mot de passe
-         String nomConnexion =  "u363596812_stri" ;  // dépend du contexte
-         String motDePasse =  "teamjava" ;  // dépend du contexte
+          // String nomConnexion =  "u363596812_stri" ;  // dépend du contexte
+
+         String nomConnexion =  "root" ;  // dépend du contexte
+        // String motDePasse =  "teamjava" ;  // dépend du contexte
+
+         String motDePasse =  "" ;  // dépend du contexte
           // Connexion
          Connection con = DriverManager.getConnection(
             conString, nomConnexion, motDePasse) ;
 
           // Envoi d’un requête générique
-         String sql =  "select * from personne" ;
+         String sql =  "select * from salles" ;
          Statement smt = con.createStatement() ;
          ResultSet rs = smt.executeQuery(sql) ;
           while (rs.next()) {
