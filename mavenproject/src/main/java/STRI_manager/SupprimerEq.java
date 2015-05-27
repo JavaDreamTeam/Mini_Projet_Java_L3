@@ -38,64 +38,55 @@ public class SupprimerEq extends javax.swing.JFrame {
         validerSup = new javax.swing.JButton();
         Annuler = new javax.swing.JButton();
         Eq = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+        getContentPane().add(nomEq);
+        nomEq.setBounds(186, 74, 122, 31);
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel1.setText("Saisissez le Nom de l'equipement à supprimer");
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setText("                      Saisissez le Nom de l'equipement à supprimer");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 2));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 475, 26);
 
+        validerSup.setBackground(new java.awt.Color(255, 255, 255));
         validerSup.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        validerSup.setForeground(new java.awt.Color(0, 0, 255));
         validerSup.setText("Valider");
         validerSup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 validerSupActionPerformed(evt);
             }
         });
+        getContentPane().add(validerSup);
+        validerSup.setBounds(332, 185, 71, 23);
 
         Annuler.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Annuler.setText("Annuler");
+        Annuler.setForeground(new java.awt.Color(0, 0, 255));
+        Annuler.setText("Retour");
+        Annuler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AnnulerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Annuler);
+        Annuler.setBounds(74, 185, 90, 23);
 
         Eq.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        Eq.setForeground(new java.awt.Color(0, 0, 255));
         Eq.setText("NOM EQUIPEMENT");
+        getContentPane().add(Eq);
+        Eq.setBounds(47, 81, 101, 15);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(Annuler, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(validerSup))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(Eq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(38, 38, 38)
-                        .addComponent(nomEq, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95)))
-                .addGap(72, 72, 72))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomEq, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Eq))
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Annuler)
-                    .addComponent(validerSup))
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(474, 60, 0, 14);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(0, -6, 480, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,6 +121,13 @@ public class SupprimerEq extends javax.swing.JFrame {
 			 } 
        
     }//GEN-LAST:event_validerSupActionPerformed
+
+    private void AnnulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnnulerActionPerformed
+        // TODO add your handling code here:
+        STRI retour = new STRI();
+        retour.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_AnnulerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,6 +168,8 @@ public class SupprimerEq extends javax.swing.JFrame {
     private javax.swing.JButton Annuler;
     private javax.swing.JLabel Eq;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nomEq;
     private javax.swing.JButton validerSup;
     // End of variables declaration//GEN-END:variables
