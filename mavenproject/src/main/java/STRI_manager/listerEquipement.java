@@ -45,12 +45,20 @@ public class listerEquipement extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("NOM DE LA SALLE");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel2.setText("                       EQUIPEMENT(S)  DE CETTE SALLE");
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jLabel2.setBackground(new java.awt.Color(0, 255, 0));
         jLabel2.setText("                                  EQUIPEMENT(S)  DE CETTE SALLE");
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 2));
 
+        Valider.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        Valider.setForeground(new java.awt.Color(0, 0, 255));
         Valider.setText("Valider");
         Valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,12 +66,16 @@ public class listerEquipement extends javax.swing.JFrame {
             }
         });
 
+        retour.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        retour.setForeground(new java.awt.Color(0, 0, 255));
         retour.setText("Retour");
         retour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 retourActionPerformed(evt);
             }
         });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/equipSalle.jpg"))); // NOI18N
 
         combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

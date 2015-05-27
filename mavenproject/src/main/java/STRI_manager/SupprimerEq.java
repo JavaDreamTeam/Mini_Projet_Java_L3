@@ -39,6 +39,7 @@ public class SupprimerEq extends javax.swing.JFrame {
         Annuler = new javax.swing.JButton();
         Eq = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,11 +52,11 @@ public class SupprimerEq extends javax.swing.JFrame {
         jLabel1.setText("                      Saisissez le Nom de l'equipement à supprimer");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 2));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 475, 26);
+        jLabel1.setBounds(0, 0, 460, 26);
 
         validerSup.setBackground(new java.awt.Color(255, 255, 255));
         validerSup.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        validerSup.setForeground(new java.awt.Color(0, 0, 255));
+        validerSup.setForeground(new java.awt.Color(255, 0, 0));
         validerSup.setText("Valider");
         validerSup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,10 +64,10 @@ public class SupprimerEq extends javax.swing.JFrame {
             }
         });
         getContentPane().add(validerSup);
-        validerSup.setBounds(332, 185, 71, 23);
+        validerSup.setBounds(270, 200, 71, 23);
 
         Annuler.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Annuler.setForeground(new java.awt.Color(0, 0, 255));
+        Annuler.setForeground(new java.awt.Color(255, 0, 0));
         Annuler.setText("Retour");
         Annuler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,10 +75,10 @@ public class SupprimerEq extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Annuler);
-        Annuler.setBounds(74, 185, 90, 23);
+        Annuler.setBounds(40, 200, 90, 23);
 
         Eq.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        Eq.setForeground(new java.awt.Color(0, 0, 255));
+        Eq.setForeground(new java.awt.Color(255, 0, 0));
         Eq.setText("NOM EQUIPEMENT");
         getContentPane().add(Eq);
         Eq.setBounds(47, 81, 101, 15);
@@ -85,8 +86,13 @@ public class SupprimerEq extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(474, 60, 0, 14);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/computer.jpg"))); // NOI18N
+        jLabel2.setMinimumSize(new java.awt.Dimension(400, 400));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(40, 30, 300, 230);
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, -6, 480, 310);
+        jLabel4.setBounds(340, 30, 130, 240);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,6 +174,7 @@ public class SupprimerEq extends javax.swing.JFrame {
     private javax.swing.JButton Annuler;
     private javax.swing.JLabel Eq;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nomEq;
