@@ -41,6 +41,8 @@ public class STRI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 190, 73));
         setForeground(new java.awt.Color(0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(500, 500));
+        getContentPane().setLayout(null);
 
         labelAccueil.setForeground(new java.awt.Color(0, 0, 255));
         labelAccueil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo.jpg"))); // NOI18N
@@ -49,6 +51,22 @@ public class STRI extends javax.swing.JFrame {
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, labelAccueil, org.jdesktop.beansbinding.ELProperty.create("${font}"), labelAccueil, org.jdesktop.beansbinding.BeanProperty.create("font"));
         bindingGroup.addBinding(binding);
+
+        getContentPane().add(labelAccueil);
+        labelAccueil.setBounds(0, 0, 476, 51);
+
+        ajoutSalle.setBackground(new java.awt.Color(255, 255, 255));
+        ajoutSalle.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        ajoutSalle.setForeground(new java.awt.Color(0, 63, 197));
+        ajoutSalle.setText("Ajouter Une Salle");
+        ajoutSalle.setToolTipText("");
+        ajoutSalle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajoutSalleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ajoutSalle);
+        ajoutSalle.setBounds(62, 69, 201, 23);
 
         ajoutEq.setBackground(new java.awt.Color(255, 255, 255));
         ajoutEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -60,18 +78,24 @@ public class STRI extends javax.swing.JFrame {
                 ajoutEqActionPerformed(evt);
             }
         });
+        getContentPane().add(ajoutEq);
+        ajoutEq.setBounds(62, 110, 201, 23);
 
         affecterEq.setBackground(new java.awt.Color(255, 255, 255));
         affecterEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         affecterEq.setForeground(new java.awt.Color(0, 63, 197));
         affecterEq.setText("Details Equipement");
         affecterEq.setToolTipText("");
+        getContentPane().add(affecterEq);
+        affecterEq.setBounds(62, 151, 201, 23);
 
         desactiverEq.setBackground(new java.awt.Color(255, 255, 255));
         desactiverEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
         desactiverEq.setForeground(new java.awt.Color(0, 63, 197));
         desactiverEq.setText("Désactiver Un Equipement");
         desactiverEq.setToolTipText("");
+        getContentPane().add(desactiverEq);
+        desactiverEq.setBounds(62, 197, 201, 23);
 
         supEq.setBackground(new java.awt.Color(255, 255, 255));
         supEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -83,56 +107,10 @@ public class STRI extends javax.swing.JFrame {
                 supEqActionPerformed(evt);
             }
         });
-
-        listerEq.setBackground(new java.awt.Color(255, 255, 255));
-        listerEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        listerEq.setForeground(new java.awt.Color(0, 63, 197));
-        listerEq.setText("Lister Equipements");
-        listerEq.setToolTipText("");
-        listerEq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listerEqActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(desactiverEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(affecterEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ajoutEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(supEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(listerEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(106, 106, 106))
-            .addComponent(labelAccueil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(labelAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addComponent(listerEq)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ajoutEq)
-                        .addGap(18, 18, 18)
-                        .addComponent(affecterEq)
-                        .addGap(23, 23, 23)
-                        .addComponent(desactiverEq)
-                        .addGap(18, 18, 18)
-                        .addComponent(supEq)
-                        .addContainerGap())))
-        );
+        getContentPane().add(supEq);
+        supEq.setBounds(62, 238, 201, 23);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(500, 500, 500, 0);
 
         bindingGroup.bind();
 

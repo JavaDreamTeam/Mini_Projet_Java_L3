@@ -5,6 +5,14 @@
  */
 package STRI_manager;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Vector;
+import javax.swing.JTable;
+import java.util.*;
+
 /**
  *
  * @author AlphaOumar
@@ -88,6 +96,57 @@ public class listerEquipement extends javax.swing.JFrame {
 
     private void ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValiderActionPerformed
         // TODO add your handling code here:
+        JTable table;
+     Vector <String> colonnes ;
+     Vector <String> tuple;
+    Vector <Vector>  lignes;
+   ArrayList <Equipements_1> liste;
+    Equipements_1 E;
+        Connection con=null;
+	PreparedStatement st=null;
+    ResultSet rs=null;
+    
+    colonnes = new Vector<String>();
+		colonnes.add("Nom");
+		colonnes.add("Interface");
+		colonnes.add("Type");
+		colonnes.add("Salle");
+                lignes = new Vector <Vector>();
+		liste = new ArrayList <Equipements_1>();
+		for (int i=0;i<liste.size();i++)
+		{
+                   
+                    tuple= new Vector <String>();
+			 E = liste.get(i);
+			tuple.add(E.getNomEq());
+			tuple.add(E.getInterfaceEq());
+			tuple.add(E.getTypeEq());
+			tuple.add(E.getSalle());
+			lignes.add(tuple);
+		
+                }
+            try
+			 {
+		        	//Recuperer les valeurs des differents champs de saisie  
+		    		String nom=salle.getText();
+		    	    E = new Equipements_1();
+		    	  //Ajout des Attributs de l'objet equipement a ajouter
+		    		E.setNomEq(nom);
+		    	 //Vider chaque champ de texte pour une quelconque nouvel ajout
+		    		salle.setText("");
+		    	 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
+		    		st= con.prepareStatement("select * from equipements where nomSalle=?");
+
+		             st.setString(1,nom);
+		             st.executeQuery();
+                             System.out.println (nom);
+                             
+		    }
+			 catch(Exception ex)
+			 {
+				 System.out.println(ex.getMessage());
+			 } 
+        
     }//GEN-LAST:event_ValiderActionPerformed
 
     /**
