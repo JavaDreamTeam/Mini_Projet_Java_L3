@@ -92,7 +92,7 @@ public class Local{
 				 salles.remove(itr.next());
 				 }
 			 else {
-				 System.out.println("L'objet que vous voulez supprimer n'exite pas");
+				 System.out.println("La salle  que vous voulez supprimer n'exite pas");
 			 }
 		 }     
 		//salles.remove(idSalle);
