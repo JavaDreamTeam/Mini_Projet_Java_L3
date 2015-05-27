@@ -51,7 +51,7 @@ public class listerEquipement extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("                       EQUIPEMENT(S)  DE CETTE SALLE");
-        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 255)));
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         Valider.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         Valider.setForeground(new java.awt.Color(0, 0, 255));
