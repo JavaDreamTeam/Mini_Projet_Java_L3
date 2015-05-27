@@ -224,6 +224,10 @@ public class ajoutEquipement extends javax.swing.JFrame {
 
     private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
         // TODO add your handling code here:
+        STRI retour = new STRI();
+        retour.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_annulerActionPerformed
 
     /**
