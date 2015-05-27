@@ -55,6 +55,11 @@ public class listerEquipement extends javax.swing.JFrame {
         });
 
         retour.setText("Retour");
+        retour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retourActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,6 +153,13 @@ public class listerEquipement extends javax.swing.JFrame {
 			 } 
         
     }//GEN-LAST:event_ValiderActionPerformed
+
+    private void retourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retourActionPerformed
+        // TODO add your handling code here:
+        STRI retour = new STRI();
+        retour.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_retourActionPerformed
 
     /**
      * @param args the command line arguments
