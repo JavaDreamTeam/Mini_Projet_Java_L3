@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package STRI_manager;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Salles {
 	private String nom = new String();
 	private String batiment = new String();
-	private ArrayList<Equipements> ListEq;
+	private ArrayList<Equipements_1> ListEq;
 	/**
 	 * 
 	 */
@@ -20,7 +20,7 @@ public class Salles {
 		super();
 		this.nom = nom;
 		this.batiment = batiment;
-		ListEq=new ArrayList<Equipements>();
+		ListEq=new ArrayList<Equipements_1>();
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -39,7 +39,7 @@ public class Salles {
 	/**
 	 * @param listEq the listEq to set
 	 */
-	public void setListEq(ArrayList<Equipements> listEq) {
+	public void setListEq(ArrayList<Equipements_1> listEq) {
 		ListEq = listEq;
 	}
 	
@@ -58,7 +58,7 @@ public class Salles {
 	/**
 	 * @return the listEq
 	 */
-	public ArrayList<Equipements> getListEq() {
+	public ArrayList<Equipements_1> getListEq() {
 		return ListEq;
 	}
 
