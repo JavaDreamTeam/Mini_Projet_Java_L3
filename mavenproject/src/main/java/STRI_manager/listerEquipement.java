@@ -59,6 +59,11 @@ public class listerEquipement extends javax.swing.JFrame {
         });
 
         retour.setText("Retour");
+        retour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retourActionPerformed(evt);
+            }
+        });
 
         combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -175,6 +180,13 @@ public class listerEquipement extends javax.swing.JFrame {
             
         
     }//GEN-LAST:event_ValiderActionPerformed
+
+    private void retourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retourActionPerformed
+        // TODO add your handling code here:
+        STRI retour = new STRI();
+        retour.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_retourActionPerformed
 
     /**
      * @param args the command line arguments
