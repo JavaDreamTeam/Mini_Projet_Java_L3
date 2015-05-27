@@ -31,12 +31,12 @@ public class STRI extends javax.swing.JFrame {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         labelAccueil = new javax.swing.JLabel();
-        ajoutSalle = new javax.swing.JButton();
         ajoutEq = new javax.swing.JButton();
         affecterEq = new javax.swing.JButton();
         desactiverEq = new javax.swing.JButton();
         supEq = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        listerEq = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 190, 73));
@@ -49,17 +49,6 @@ public class STRI extends javax.swing.JFrame {
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, labelAccueil, org.jdesktop.beansbinding.ELProperty.create("${font}"), labelAccueil, org.jdesktop.beansbinding.BeanProperty.create("font"));
         bindingGroup.addBinding(binding);
-
-        ajoutSalle.setBackground(new java.awt.Color(255, 255, 255));
-        ajoutSalle.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        ajoutSalle.setForeground(new java.awt.Color(0, 63, 197));
-        ajoutSalle.setText("Ajouter Une Salle");
-        ajoutSalle.setToolTipText("");
-        ajoutSalle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajoutSalleActionPerformed(evt);
-            }
-        });
 
         ajoutEq.setBackground(new java.awt.Color(255, 255, 255));
         ajoutEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -95,6 +84,17 @@ public class STRI extends javax.swing.JFrame {
             }
         });
 
+        listerEq.setBackground(new java.awt.Color(255, 255, 255));
+        listerEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        listerEq.setForeground(new java.awt.Color(0, 63, 197));
+        listerEq.setText("Lister Equipements");
+        listerEq.setToolTipText("");
+        listerEq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listerEqActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,11 +102,11 @@ public class STRI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ajoutSalle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(desactiverEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(affecterEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ajoutEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(supEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(supEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(listerEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(106, 106, 106))
@@ -116,14 +116,14 @@ public class STRI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(labelAccueil, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(listerEq)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(20, 20, 20))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ajoutSalle)
-                        .addGap(18, 18, 18)
                         .addComponent(ajoutEq)
                         .addGap(18, 18, 18)
                         .addComponent(affecterEq)
@@ -139,13 +139,6 @@ public class STRI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ajoutSalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutSalleActionPerformed
-        /* On ouvre Une nouvelle fenêtre avec le clic*/
-        ajoutSalle ajoutEq= new ajoutSalle();
-        ajoutEq.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ajoutSalleActionPerformed
-
     private void ajoutEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutEqActionPerformed
         /*Nouvelle fenêtre pour ajout d'un équipement*/
         ajoutEquipement ajoutEq= new ajoutEquipement();
@@ -160,6 +153,10 @@ public class STRI extends javax.swing.JFrame {
         supEq.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_supEqActionPerformed
+
+    private void listerEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listerEqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listerEqActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,10 +196,10 @@ public class STRI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton affecterEq;
     private javax.swing.JButton ajoutEq;
-    private javax.swing.JButton ajoutSalle;
     private javax.swing.JButton desactiverEq;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelAccueil;
+    private javax.swing.JButton listerEq;
     private javax.swing.JButton supEq;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
