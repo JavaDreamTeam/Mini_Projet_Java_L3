@@ -40,6 +40,7 @@ public class listerEquipement extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Valider = new javax.swing.JButton();
         retour = new javax.swing.JButton();
+        combo = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +57,8 @@ public class listerEquipement extends javax.swing.JFrame {
 
         retour.setText("Retour");
 
+        combo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,15 +69,18 @@ public class listerEquipement extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(retour)
                     .addComponent(jLabel1))
+                .addGap(37, 37, 37)
+                .addComponent(salle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(123, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(salle, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(123, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Valider)
-                        .addGap(59, 59, 59))))
+                        .addGap(59, 59, 59))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +90,9 @@ public class listerEquipement extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(salle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
+                .addGap(18, 18, 18)
+                .addComponent(combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Valider)
                     .addComponent(retour))
@@ -113,6 +121,40 @@ public class listerEquipement extends javax.swing.JFrame {
 		colonnes.add("Salle");
                 lignes = new Vector <Vector>();
 		liste = new ArrayList <Equipements_1>();
+                
+                try
+			 {
+		        	//Recuperer les valeurs des differents champs de saisie  
+		    		String nom=salle.getText();
+		    	    E = new Equipements_1();
+		    	  //Ajout des Attributs de l'objet equipement a ajouter
+		    		E.setNomEq(nom);
+		    	 //Vider chaque champ de texte pour une quelconque nouvel ajout
+		    		salle.setText("");
+		    	 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
+		    		st= con.prepareStatement("select nomEq from equipements where nomSalle=?");
+
+		             st.setString(1,nom);
+		             rs = st.executeQuery();
+                              
+                             combo.removeAllItems();
+                             while (rs.next())
+                             {
+                                 
+                                 String vNomEq = rs.getString("nomEq");
+                             
+                             combo.addItem(rs.getString("nomEq"));
+                             
+                             }
+                             
+                             System.out.println (nom);
+                             
+		    }
+			 catch(Exception ex)
+			 {
+				 System.out.println(ex.getMessage());
+			 } 
+                
 		for (int i=0;i<liste.size();i++)
 		{
                    
@@ -125,27 +167,7 @@ public class listerEquipement extends javax.swing.JFrame {
 			lignes.add(tuple);
 		
                 }
-            try
-			 {
-		        	//Recuperer les valeurs des differents champs de saisie  
-		    		String nom=salle.getText();
-		    	    E = new Equipements_1();
-		    	  //Ajout des Attributs de l'objet equipement a ajouter
-		    		E.setNomEq(nom);
-		    	 //Vider chaque champ de texte pour une quelconque nouvel ajout
-		    		salle.setText("");
-		    	 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
-		    		st= con.prepareStatement("select * from equipements where nomSalle=?");
-
-		             st.setString(1,nom);
-		             st.executeQuery();
-                             System.out.println (nom);
-                             
-		    }
-			 catch(Exception ex)
-			 {
-				 System.out.println(ex.getMessage());
-			 } 
+            
         
     }//GEN-LAST:event_ValiderActionPerformed
 
@@ -186,6 +208,7 @@ public class listerEquipement extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Valider;
+    private javax.swing.JComboBox combo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton retour;
