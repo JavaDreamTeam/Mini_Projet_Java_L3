@@ -31,12 +31,12 @@ public class STRI extends javax.swing.JFrame {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         labelAccueil = new javax.swing.JLabel();
-        ajoutSalle = new javax.swing.JButton();
         ajoutEq = new javax.swing.JButton();
         affecterEq = new javax.swing.JButton();
         desactiverEq = new javax.swing.JButton();
         supEq = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        listerEq = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 190, 73));
@@ -117,13 +117,6 @@ public class STRI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ajoutSalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutSalleActionPerformed
-        /* On ouvre Une nouvelle fenêtre avec le clic*/
-        ajoutSalle ajoutEq= new ajoutSalle();
-        ajoutEq.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ajoutSalleActionPerformed
-
     private void ajoutEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajoutEqActionPerformed
         /*Nouvelle fenêtre pour ajout d'un équipement*/
         ajoutEquipement ajoutEq= new ajoutEquipement();
@@ -138,6 +131,10 @@ public class STRI extends javax.swing.JFrame {
         supEq.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_supEqActionPerformed
+
+    private void listerEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listerEqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listerEqActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,10 +174,10 @@ public class STRI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton affecterEq;
     private javax.swing.JButton ajoutEq;
-    private javax.swing.JButton ajoutSalle;
     private javax.swing.JButton desactiverEq;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelAccueil;
+    private javax.swing.JButton listerEq;
     private javax.swing.JButton supEq;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
