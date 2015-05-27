@@ -117,10 +117,11 @@ public class SupprimerEq extends javax.swing.JFrame {
 		    	 //Vider chaque champ de texte pour une quelconque nouvel ajout
 		    		Eq.setText("");
 		    	 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
-		    		st= con.prepareStatement("delete  from equipements where nomEq=?");
+		    		st= con.prepareStatement("delete  * from equipements where nomEq=?");
 
 		             st.setString(1,nom);
 		             st.executeUpdate();
+                             system.out.println ()
 		    }
 			 catch(Exception ex)
 			 {

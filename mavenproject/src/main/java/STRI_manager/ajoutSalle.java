@@ -7,8 +7,6 @@ package STRI_manager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.*;
 
 /**
@@ -40,6 +38,7 @@ public class ajoutSalle extends javax.swing.JFrame {
         batiment = new javax.swing.JTextField();
         valider = new javax.swing.JButton();
         nomSalle = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +57,7 @@ public class ajoutSalle extends javax.swing.JFrame {
         valider.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         valider.setForeground(new java.awt.Color(0, 0, 255));
         valider.setText("Valider");
-        valider.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        valider.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 validerActionPerformed(evt);
@@ -71,27 +70,33 @@ public class ajoutSalle extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 255));
+        jButton1.setText("Retour");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel3)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(valider)
-                        .addGap(71, 71, 71))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
                         .addGap(81, 81, 81)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(batiment, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
                             .addComponent(nomSalle))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(valider)
+                        .addGap(59, 59, 59))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,9 +110,11 @@ public class ajoutSalle extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(batiment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(valider)
-                .addGap(0, 141, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(valider, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(82, 82, 82))
         );
 
         pack();
@@ -125,18 +132,19 @@ public class ajoutSalle extends javax.swing.JFrame {
     ResultSet rs=null;
             try
 			 {
+                             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
 		        	//Recuperer les valeurs des differents champs de saisie  
 		    		String nom=nomSalle.getText();
 		    		String bat =batiment.getText();
-		    	    Salles S = new Salles();
+		    	     S = new Salles();
 		    	  //Ajout des Attributs de l'objet equipement a ajouter
 		    		S.setNom(nom);
                                 S.setBatiment(bat);
 		    	 //Vider chaque champ de texte pour une quelconque nouvel ajout
 		    		nomSalle.setText("");
 		    		batiment.setText("");
-		    	 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/stricom","root","") ;
-		    		st= con.prepareStatement("insert into Salles(nomSalle,batiment) values(?,?)");
+		    	
+		    		st= con.prepareStatement("insert into salles(nomSalle,batiment) values(?,?)");
 
 		             st.setString(1,S.getNom());
 		             st.setString(2,S.getBatiment());
@@ -186,6 +194,7 @@ public class ajoutSalle extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField batiment;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

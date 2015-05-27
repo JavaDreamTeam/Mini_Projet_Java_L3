@@ -15,7 +15,6 @@ public class Personne {
     private int age;
     
     public Personne(){
-        nom="boubacar";
-        age=24;
+        
     }        
 }

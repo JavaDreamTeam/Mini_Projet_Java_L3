@@ -237,7 +237,7 @@ public class ajoutEquipement extends javax.swing.JFrame {
             public void run() {
                 new ajoutEquipement().setVisible(true);
             }
-        });
+            });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
