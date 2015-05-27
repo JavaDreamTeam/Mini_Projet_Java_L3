@@ -33,7 +33,7 @@ public class STRI extends javax.swing.JFrame {
         labelAccueil = new javax.swing.JLabel();
         ajoutSalle = new javax.swing.JButton();
         ajoutEq = new javax.swing.JButton();
-        affecterEq = new javax.swing.JButton();
+        detaillerEq = new javax.swing.JButton();
         desactiverEq = new javax.swing.JButton();
         supEq = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -74,11 +74,16 @@ public class STRI extends javax.swing.JFrame {
             }
         });
 
-        affecterEq.setBackground(new java.awt.Color(255, 255, 255));
-        affecterEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
-        affecterEq.setForeground(new java.awt.Color(0, 63, 197));
-        affecterEq.setText("Details Equipement");
-        affecterEq.setToolTipText("");
+        detaillerEq.setBackground(new java.awt.Color(255, 255, 255));
+        detaillerEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        detaillerEq.setForeground(new java.awt.Color(0, 63, 197));
+        detaillerEq.setText("Details Equipement");
+        detaillerEq.setToolTipText("");
+        detaillerEq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                detaillerEqActionPerformed(evt);
+            }
+        });
 
         desactiverEq.setBackground(new java.awt.Color(255, 255, 255));
         desactiverEq.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
@@ -116,7 +121,7 @@ public class STRI extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(desactiverEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(affecterEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(detaillerEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ajoutEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(supEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(listerEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -139,7 +144,7 @@ public class STRI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(ajoutEq)
                         .addGap(18, 18, 18)
-                        .addComponent(affecterEq)
+                        .addComponent(detaillerEq)
                         .addGap(23, 23, 23)
                         .addComponent(desactiverEq)
                         .addGap(18, 18, 18)
@@ -173,6 +178,13 @@ public class STRI extends javax.swing.JFrame {
         listEq.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_listerEqActionPerformed
+
+    private void detaillerEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_detaillerEqActionPerformed
+        // TODO add your handling code here:
+        DetaillerEquipement DetEq= new DetaillerEquipement();
+        DetEq.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_detaillerEqActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,10 +222,10 @@ public class STRI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton affecterEq;
     private javax.swing.JButton ajoutEq;
     private javax.swing.JButton ajoutSalle;
     private javax.swing.JButton desactiverEq;
+    private javax.swing.JButton detaillerEq;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelAccueil;
     private javax.swing.JButton listerEq;
