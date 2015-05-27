@@ -41,7 +41,7 @@ public class ajoutEquipement extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         nomSalle = new javax.swing.JTextField();
-        annuler = new javax.swing.JButton();
+        Retour = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,13 +60,13 @@ public class ajoutEquipement extends javax.swing.JFrame {
         jLabel1.setBounds(0, 0, 390, 24);
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 255, 51));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NOM");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(52, 87, 29, 25);
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 255, 51));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NOM SALLE");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(50, 182, 65, 22);
@@ -108,33 +108,33 @@ public class ajoutEquipement extends javax.swing.JFrame {
         type.setBounds(144, 151, 144, 20);
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 255, 51));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("INTERFACE");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(52, 122, 61, 15);
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 255, 51));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("TYPE");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(52, 153, 29, 15);
         getContentPane().add(nomSalle);
         nomSalle.setBounds(144, 184, 144, 20);
 
-        annuler.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        annuler.setForeground(new java.awt.Color(255, 0, 0));
-        annuler.setText("Annuler");
-        annuler.addActionListener(new java.awt.event.ActionListener() {
+        Retour.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        Retour.setForeground(new java.awt.Color(255, 0, 0));
+        Retour.setText("Retour");
+        Retour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                annulerActionPerformed(evt);
+                RetourActionPerformed(evt);
             }
         });
-        getContentPane().add(annuler);
-        annuler.setBounds(50, 226, 75, 23);
+        getContentPane().add(Retour);
+        Retour.setBounds(50, 230, 71, 23);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bacg.jpg"))); // NOI18N
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 40, 390, 250);
+        jLabel7.setBounds(50, 40, 340, 210);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -190,13 +190,13 @@ public class ajoutEquipement extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bouttonValiderActionPerformed
 
-    private void annulerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_annulerActionPerformed
+    private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
         // TODO add your handling code here:
         STRI retour = new STRI();
         retour.setVisible(true);
         this.setVisible(false);
         
-    }//GEN-LAST:event_annulerActionPerformed
+    }//GEN-LAST:event_RetourActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,7 +234,7 @@ public class ajoutEquipement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton annuler;
+    private javax.swing.JButton Retour;
     private javax.swing.JButton bouttonValider;
     private javax.swing.JTextField interEq;
     private javax.swing.JLabel jLabel1;
