@@ -40,6 +40,7 @@ public class SupprimerEq extends javax.swing.JFrame {
         Eq = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -89,7 +90,9 @@ public class SupprimerEq extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/computer.jpg"))); // NOI18N
         jLabel2.setMinimumSize(new java.awt.Dimension(400, 400));
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(40, 30, 350, 230);
+        jLabel2.setBounds(40, 30, 300, 230);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(340, 30, 130, 240);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -173,6 +176,7 @@ public class SupprimerEq extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nomEq;
     private javax.swing.JButton validerSup;
     // End of variables declaration//GEN-END:variables
