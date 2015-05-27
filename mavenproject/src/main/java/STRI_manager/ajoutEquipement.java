@@ -42,6 +42,7 @@ public class ajoutEquipement extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         nomSalle = new javax.swing.JTextField();
         annuler = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 255, 153));
@@ -49,25 +50,34 @@ public class ajoutEquipement extends javax.swing.JFrame {
         setFont(new java.awt.Font("Trebuchet MS", 2, 12)); // NOI18N
         setForeground(new java.awt.Color(51, 255, 153));
         setName("Ajout d'un Equipement"); // NOI18N
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("                                         AJOUT D'UN EQUIPEMENT");
-        jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 2));
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 390, 24);
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel2.setForeground(new java.awt.Color(0, 255, 51));
         jLabel2.setText("NOM");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(52, 87, 29, 25);
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel3.setForeground(new java.awt.Color(0, 255, 51));
         jLabel3.setText("NOM SALLE");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(50, 182, 65, 22);
 
         interEq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 interEqActionPerformed(evt);
             }
         });
+        getContentPane().add(interEq);
+        interEq.setBounds(144, 120, 144, 20);
 
         bouttonValider.setBackground(new java.awt.Color(255, 255, 255));
         bouttonValider.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
@@ -78,26 +88,38 @@ public class ajoutEquipement extends javax.swing.JFrame {
                 bouttonValiderActionPerformed(evt);
             }
         });
+        getContentPane().add(bouttonValider);
+        bouttonValider.setBounds(280, 230, 73, 23);
 
         nomEq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomEqActionPerformed(evt);
             }
         });
+        getContentPane().add(nomEq);
+        nomEq.setBounds(144, 90, 144, 20);
 
         type.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 typeActionPerformed(evt);
             }
         });
+        getContentPane().add(type);
+        type.setBounds(144, 151, 144, 20);
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel5.setForeground(new java.awt.Color(0, 255, 51));
         jLabel5.setText("INTERFACE");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(52, 122, 61, 15);
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel4.setForeground(new java.awt.Color(0, 255, 51));
         jLabel4.setText("TYPE");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(52, 153, 29, 15);
+        getContentPane().add(nomSalle);
+        nomSalle.setBounds(144, 184, 144, 20);
 
         annuler.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         annuler.setForeground(new java.awt.Color(255, 0, 0));
@@ -107,66 +129,12 @@ public class ajoutEquipement extends javax.swing.JFrame {
                 annulerActionPerformed(evt);
             }
         });
+        getContentPane().add(annuler);
+        annuler.setBounds(50, 226, 75, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bouttonValider)
-                .addGap(34, 34, 34))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(jLabel3)))
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(type, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
-                            .addComponent(nomEq)
-                            .addComponent(interEq)
-                            .addComponent(nomSalle)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(annuler)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomEq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(interEq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bouttonValider)
-                    .addComponent(annuler))
-                .addGap(56, 56, 56))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/bacg.jpg"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(50, 40, 390, 250);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -274,6 +242,7 @@ public class ajoutEquipement extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField nomEq;
     private javax.swing.JTextField nomSalle;
     private javax.swing.JTextField type;
